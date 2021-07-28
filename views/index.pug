@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .row
+    //- displays data with Bootstrap cards
+    div.card-columns
+      each data, index in datas
+        .card
+          //- a.card-link(href=`${data.url}`)
+          .card-body
+            h4.card-title= data.subject
+
+          
+          
+          
+  
+       
+

@@ -1,22 +1,40 @@
 # Zendesk Tickets 
-This web app is designed to access my Zendesk tickets through the API.
+This web app is designed to access Zendesk tickets through the API.
+
 
 ## Tech Used
 - JavaScript
 - Node.js
+- Pug
 - Express
+- Bootstrap
 - dotenv
 - request
 
 
 ## Install, Setup & Run
 
+### Install/Setup
 ```
 git clone https://github.com/LWRGitHub/zendesk-tickets.git
 cd zendesk-tickets
 npm install
 mv .env.example .env
 ```
-***Make sure to put your zendesk email & pasword in the .env file***
+***Make sure to setup your .env file***
+
+**.env Example:**
+
+```
+EMAIL="exampleemail@email.com"
+PASSWORD="password"
+ZENDESK_DOMAIN="zccstudents"
+```
+
+### Run @ localhost:3000
+
+```
+nodemon
+```
 
 ## IMG
