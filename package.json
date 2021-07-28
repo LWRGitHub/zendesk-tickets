@@ -1,0 +1,25 @@
+{
+  "name": "zendesk-tickets",
+  "version": "1.0.0",
+  "description": "get zendesk tickets through api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LWRGitHub/zendesk-tickets.git"
+  },
+  "author": "Logan Reynolds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LWRGitHub/zendesk-tickets/issues"
+  },
+  "homepage": "https://github.com/LWRGitHub/zendesk-tickets#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "require": "^2.4.20"
+  }
+}
