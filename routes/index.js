@@ -1,7 +1,6 @@
 // Get .env
-if (!process.env.PORT) {
-    require('dotenv').config()
-}
+require('dotenv').config()
+
 
 // Setup request 
 const request = require('request')
@@ -16,18 +15,21 @@ const zendeskAPI = async () =>{
         promises.push(
             new Promise((resolve, reject) => {
                 request(
+                    // Setup auth
                     {
                         url : url,
                         headers : {
                             "Authorization" : auth
                         }
                     },
+                    // Request results
                     function (err, res, body) {
                         if (res.statusCode === 200) {
-                            // console.log(JSON.parse(body))
-                            resolve(JSON.parse(body));
+                            const data = JSON.parse(body)
+                            resolve(data); 
                         } else {
-                            reject(err);
+                            // reject(err); //Use to debug errors
+                            resolve({requests: [{subject: "Something Went Wrong", description:"The API was unable to handle your request. Try refreshing the page."}],count: 1})
                         }
                     }
                 );
@@ -37,13 +39,22 @@ const zendeskAPI = async () =>{
     });
 }
 
+// Export the routes
 module.exports = (app) => {
 
+    // Home
     app.get(`/`, async (req, res) => {
         zendeskAPI()
         .then((data) => {
-            res.render('index', {datas: data[0].requests})
+            res.render('index', {datas: data[0].requests, length: data[0].count, amountPages:  Math.ceil(data[0].count/25)})
         })
+    });
 
+    // Route used if there are more than 25 tickets 
+    app.get(`/changePage/:pageNum`, (req, res) => {
+        zendeskAPI()
+        .then((data) => {
+            res.render('changePage', {datas: data[0].requests, length: data[0].count, pageNum: Number(req.params.pageNum), amountPages: Math.ceil(data[0].count/25)})
+        })
     });
 }

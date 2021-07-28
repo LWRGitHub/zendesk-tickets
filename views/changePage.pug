@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  .row
+    if length >= 25
+
+      //- Displays 25 tickets 
+      div.card-columns.mt-5
+        - var index = pageNum * 25 - 25
+        - var stopAt = 25 + index
+        while index < stopAt
+          .card
+            .card-body
+              h4.card-title= datas[index].subject
+              p.card-text= datas[index].description
+          - var index= index+1
+      
+      //- Nav for tickes at bottom
+      div.mx-auto
+
+        //- Checks if there are less than 4 pages
+        if amountPages <= 4
+          - var pageCount = 1
+          while pageCount < amountPages
+            a.text-center.m-3(href=`/changePage/${pageCount}`)= pageCount
+            - var pageCount= pageCount+1
+          span.text-center.m-3= `...`
+          a.text-center.m-3(href=`/changePage/${amountPages}`)= amountPages
+
+        //- Enters else if there are more than 4 pages
+        else 
+
+          //- Checks if the curent page + 5 is less than the total amount of pages
+          if amountPages > 5 + pageNum
+            - var stopAt = 5 + pageNum
+            while pageNum < stopAt
+              a.text-center.m-3(href=`/changePage/${pageNum}`)= pageNum
+              - var pageNum= pageNum+1
+            span.text-center.m-3= `...`
+            a.text-center.m-3(href=`/changePage/${amountPages}`)= amountPages
+
+          //- Enters else if we are almost at the last page
+          else 
+
+            - var pageNum = amountPages - 4
+            while pageNum != amountPages
+              a.text-center.m-3(href=`/changePage/${pageNum}`)= pageNum
+              - var pageNum= pageNum+1
+            span.text-center.m-3= `...`
+            a.text-center.m-3(href=`/changePage/${amountPages}`)= amountPages
+
+    else
+
+      //- Displays tickets
+      div.card-columns.mt-5
+        each data, index in datas
+          .card
+            .card-body
+              h4.card-title= data.subject
+              p.card-text= data.description
+
+          
+          
+          
+  
+       
+

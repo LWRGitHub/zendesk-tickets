@@ -2,13 +2,46 @@ extends layout
 
 block content
   .row
-    //- displays data with Bootstrap cards
-    div.card-columns
-      each data, index in datas
-        .card
-          //- a.card-link(href=`${data.url}`)
-          .card-body
-            h4.card-title= data.subject
+    if length >= 25
+
+      //- Displays 25 tickets 
+      div.card-columns.mt-5
+        - var index = 0
+        while index < 25
+          .card
+            .card-body
+              h4.card-title= datas[index].subject
+              p.card-text= datas[index].description
+          - var index= index+1
+      
+      //- Nav for tickes at bottom
+      - var pageNum = 1
+      div.mx-auto
+
+        if amountPages <= 4
+          while pageNum < amountPages
+            a.text-center.m-3(href=`/changePage/${pageNum}`)= pageNum
+            - var pageNum= pageNum+1
+          span.text-center.m-3= `...`
+          a.text-center.m-3(href=`/changePage/${amountPages}`)= amountPages
+
+        else 
+
+          while pageNum < 5
+            a.text-center.m-3(href=`/changePage/${pageNum}`)= pageNum
+            - var pageNum= pageNum+1
+          span.text-center.m-3= `...`
+          a.text-center.m-3(href=`/changePage/${amountPages}`)= amountPages
+
+    else
+
+      //- Displays tickets
+      div.card-columns.mt-5
+        each data, index in datas
+          .card
+            .card-body
+              h4.card-title= data.subject
+              p.card-text= data.description
 
           
           
