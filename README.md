@@ -1,5 +1,7 @@
-# Zendesk Tickets 
-This web app is designed to access Zendesk tickets through the API.
+# Zendesk Tickets
+This web app is designed to access Zendesk tickets through the API. this is a full stack web app that uses Pug for the front end & Node.js for that back end. Simply fill in the .env & setup instructions bellow to access your Zendesk tickets.
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/LWRGitHub/zendesk-tickets/blob/main/LICENSE)
 
 
 ## Tech Used
@@ -12,7 +14,6 @@ This web app is designed to access Zendesk tickets through the API.
 - request
 - Mocha
 - Chai
-- sinon
 
 
 ## Install, Setup, Test & Run
@@ -47,3 +48,21 @@ nodemon
 ```
 
 ## IMG
+
+***Main Page***
+
+<img alt="Index page of the Zendesk ticket site." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/index-pg-top.png" />
+
+***Footer***
+
+<img alt="Footer of the Zendesk ticket site." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/index-pg-bottom.png" />
+
+
+## Acknowledgements
+
+ - [Zendesk API](https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/)
+
+## Author
+
+- [@LWRGitHub](https://github.com/LWRGitHub)
+
