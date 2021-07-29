@@ -51,11 +51,15 @@ nodemon
 
 ***Main Page***
 
-<img alt="Index page of the Zendesk ticket site." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/index-pg-top.png" />
+<img alt="Index page of the Zendesk ticket site. The image has Zendesk tickets & A title bar." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/index-pg-top.png" />
 
 ***Footer***
 
-<img alt="Footer of the Zendesk ticket site." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/index-pg-bottom.png" />
+<img alt="Footer of the Zendesk ticket site. This image has a footer with a copyright, it displays Zendesk tickets and navigation links to the other pages." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/index-pg-bottom.png" />
+
+***Friendly Error Message***
+
+<img alt="Friendly error message that appears when failure to connect to API happens. It shows the error message where the ticket info would go, The page has a title bar and footer with a copyright." src="https://raw.githubusercontent.com/LWRGitHub/zendesk-tickets/main/public/img/friendly-err-msg.png" />
 
 
 ## Acknowledgements
