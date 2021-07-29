@@ -10,9 +10,12 @@ This web app is designed to access Zendesk tickets through the API.
 - Bootstrap
 - dotenv
 - request
+- Mocha
+- Chai
+- sinon
 
 
-## Install, Setup & Run
+## Install, Setup, Test & Run
 
 ### Install/Setup
 ```
@@ -29,6 +32,12 @@ mv .env.example .env
 EMAIL="exampleemail@email.com"
 PASSWORD="password"
 ZENDESK_DOMAIN="zccstudents"
+```
+
+### Test
+
+```
+npm run test
 ```
 
 ### Run @ localhost:3000
